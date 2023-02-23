@@ -1,0 +1,19 @@
+{
+  "name": "lib.ipsen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ipsen": "./lib/main.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "fs-jetpack": "^5.1.0"
+  }
+}
