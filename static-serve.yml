@@ -2,4 +2,5 @@ port: 45067
 headers:
   cache-control: no-cache
 sources:
+- dir: docs/site
 - dir: test/site
