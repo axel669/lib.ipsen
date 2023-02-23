@@ -1,6 +1,6 @@
 {
-  "name": "lib.ipsen",
-  "version": "1.0.0",
+  "name": "@axel669/ipsen",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/main.mjs",
   "scripts": {
@@ -15,5 +15,8 @@
   "dependencies": {
     "fast-glob": "^3.2.12",
     "fs-jetpack": "^5.1.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
