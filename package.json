@@ -1,7 +1,7 @@
 {
   "name": "@axel669/ipsen",
   "version": "0.1.0",
-  "description": "",
+  "description": "Library for generating documentation sites from markdown embedded in code comments",
   "main": "lib/main.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "ipsen": "./lib/main.mjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Axel",
   "license": "MIT",
   "dependencies": {
     "fast-glob": "^3.2.12",
