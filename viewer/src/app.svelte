@@ -32,6 +32,7 @@
     content-wrapper {
         display: block;
         width: min(100%, 640px);
+        padding: 6px;
     }
 
     /* a series of global css defines for the markdown rendering */
@@ -64,7 +65,7 @@
             <Icon name="bars" />
         </Button>
     </Appbar>
-    <Paper square>
+    <Paper square lscrollable>
         <content-wrapper>
             {#if $page === null}
                 Loading...
