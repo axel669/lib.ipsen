@@ -1,6 +1,9 @@
 window.appInfo = {
-    "sidebar": {
-        "Home": "home"
-    },
-    "title": "Ipsen"
+    "sidebar": [
+        [
+            "Home",
+            "main"
+        ]
+    ],
+    "title": "Ipsen Documentation"
 }
