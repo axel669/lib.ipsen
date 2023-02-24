@@ -1,14 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@axel669/array-sort': ^0.1.0
   fast-glob: ^3.2.12
   fs-jetpack: ^5.1.0
 
 dependencies:
+  '@axel669/array-sort': 0.1.0
   fast-glob: 3.2.12
   fs-jetpack: 5.1.0
 
 packages:
+
+  /@axel669/array-sort/0.1.0:
+    resolution: {integrity: sha512-7fucLTKIqkQWLv+op5FDa8MXRDtpRTTAnFU2dG+/1imJHJI2pAyUbpXCIU9SO5so+SKg5Yn2mtuQhTnx/pf2qg==}
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
