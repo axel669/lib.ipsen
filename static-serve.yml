@@ -2,5 +2,13 @@ port: 45067
 headers:
   cache-control: no-cache
 sources:
-- dir: docs/site
-- dir: test/site
+- route: /docs
+  dir: viewer/build
+- route: /test
+  dir: viewer/build
+- route: /docs
+  dir: docs/site
+- route: /test
+  dir: test/site
+- route: /preview
+  dir: docs/site
