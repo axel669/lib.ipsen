@@ -10,8 +10,10 @@
 
     import page from "$/state/page"
 
-    export let section = null
-    export let content
+    export let item
+    // export let section = null
+    // export let content
+    const [section, content] = item
 
     const terminal = typeof content === "string"
 
@@ -21,7 +23,7 @@
 
     let open = openState.get(content) ?? false
 
-    const list = Object.entries(content)
+    // const list = Object.entries(content)
 
     $: openState.set(content, open)
 </script>
@@ -56,11 +58,11 @@
             <div>{section}</div>
         </Button>
     {:else}
-        {#each list as [title, content]}
+        {#each content as item}
             <details bind:open>
                 <summary>{section}</summary>
                 <not-summary>
-                    <svelte:self section={title} {content} />
+                    <svelte:self {item} />
                 </not-summary>
             </details>
         {/each}

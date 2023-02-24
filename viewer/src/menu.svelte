@@ -6,7 +6,7 @@
     export let content
     export let close
 
-    const list = Object.entries(content)
+    // const list = Object.entries(content)
 
     $: if ($page ===null) {
         close()
@@ -21,6 +21,6 @@
 </style>
 
 <size-elem />
-{#each list as [section, content]}
-    <Item {section} {content} />
+{#each content as item}
+    <Item {item} />
 {/each}
