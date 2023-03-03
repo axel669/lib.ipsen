@@ -4,11 +4,13 @@ specifiers:
   '@axel669/array-sort': ^0.1.0
   fast-glob: ^3.2.12
   fs-jetpack: ^5.1.0
+  marked: ^4.2.12
 
 dependencies:
   '@axel669/array-sort': 0.1.0
   fast-glob: 3.2.12
   fs-jetpack: 5.1.0
+  marked: 4.2.12
 
 packages:
 
@@ -106,6 +108,12 @@ packages:
   /is-number/7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
+    dev: false
+
+  /marked/4.2.12:
+    resolution: {integrity: sha512-yr8hSKa3Fv4D3jdZmtMMPghgVt6TWbk86WQaWhDloQjRSQhMMYCAro7jP7VDJrjjdV8pxVxMssXS8B8Y5DZ5aw==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: false
 
   /merge2/1.4.1:
