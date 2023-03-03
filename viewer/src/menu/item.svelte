@@ -11,21 +11,16 @@
     import page from "$/state/page"
 
     export let item
-    // export let section = null
-    // export let content
-    const [section, content] = item
+    const { label, items } = item
 
-    const terminal = typeof content === "string"
+    const terminal = Array.isArray(items) === false
 
     const navigate = (next) =>
         () => location.hash = next
-        // () => page.load(next)
 
-    let open = openState.get(content) ?? false
+    let open = openState.get(items) ?? false
 
-    // const list = Object.entries(content)
-
-    $: openState.set(content, open)
+    $: openState.set(items, open)
 </script>
 
 <style>
@@ -54,17 +49,17 @@
 
 <menu-node class:terminal>
     {#if terminal === true}
-        <Button on:click={navigate(content)} square compact>
-            <div>{section}</div>
+        <Button on:click={navigate(items)} square compact>
+            <div>{label}</div>
         </Button>
     {:else}
-        {#each content as item}
-            <details bind:open>
-                <summary>{section}</summary>
+        <details bind:open>
+            <summary>{label}</summary>
+            {#each items as item}
                 <not-summary>
                     <svelte:self {item} />
                 </not-summary>
-            </details>
-        {/each}
+            {/each}
+        </details>
     {/if}
 </menu-node>

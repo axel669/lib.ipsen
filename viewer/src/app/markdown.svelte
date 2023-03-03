@@ -2,7 +2,13 @@
     import { onMount } from "svelte"
     import Markdown from "svelte-markdown"
 
+    import Code from "./markdown/code.svelte"
+
     export let source
+
+    const renderers = {
+        code: Code,
+    }
 
     let markdownContainer = null
     onMount(
@@ -20,5 +26,5 @@
 </script>
 
 <div bind:this={markdownContainer}>
-    <Markdown {source} />
+    <Markdown {source} {renderers} />
 </div>

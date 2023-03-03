@@ -2,7 +2,6 @@
     import {
         AppStyle,
         Baseline as baseline,
-        TronTheme as theme,
 
         Screen,
         Paper,
@@ -15,18 +14,30 @@
         hash,
     } from "svelte-doric"
 
+    import Theme, { theme } from "./app/theme.svelte"
     import Markdown from "./app/markdown.svelte"
 
     import Menu from "./menu.svelte"
+    import Page from "./app/page.svelte"
 
     import page from "$/state/page"
 
-    const {sidebar, title} = window.appInfo
+    const { sidebar, title } = window.siteConfig
 
     const showMenu = () => drawer.open(Menu, { content: sidebar })
 
-    $: page.load($hash || "home")
+    hljs.configure({
+        ignoreUnescapedHTML: true,
+    })
+
+    $: page.load($hash || "index")
 </script>
+
+<svelte:head>
+    <title>
+        {title}
+    </title>
+</svelte:head>
 
 <style>
     content-wrapper {
@@ -53,9 +64,18 @@
     :global(ul) {
         padding-inline-start: 28px;
     }
+    :global(iframe) {
+        width: 100%;
+        height: 250px;
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+    }
+    :global(pre) {
+        overflow-x: auto;
+    }
 </style>
 
-<AppStyle {baseline} {theme} />
+<AppStyle {baseline} theme={$theme} />
 
 <Screen full>
     <Appbar slot="title">
@@ -67,12 +87,12 @@
     </Appbar>
     <Paper square lscrollable>
         <content-wrapper>
+            <Theme />
             {#if $page === null}
                 Loading...
             {:else}
-                <Markdown source={$page} />
+                <Page html={$page} />
             {/if}
         </content-wrapper>
-        <!-- <pre>{$page ?? "loading..."}</pre> -->
     </Paper>
 </Screen>
