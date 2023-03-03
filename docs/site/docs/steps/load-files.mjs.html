@@ -1,0 +1,36 @@
+<h1 id="markdown-extensions">Markdown Extensions</h1>
+<p>Ipsen has added a couple of shorthands to allow embedding extra information in
+the markdown comments without cluttering them.</p>
+<h2 id="sidebar-path">Sidebar Path</h2>
+<p><code>[@] &lt;Path&gt;</code> can be used to tell Ipsen to use a specific sidebar path instead of
+generating one from the file location. Write as a normal path using <code>/</code> to
+delimit the expandable sections, and <code>//</code> can be used as an escape sequence to
+put a &quot;/&quot; into the sidebar item label.</p>
+<h2 id="code-examples-from-files">Code Examples from files</h2>
+<p><code>[$] &lt;Path&gt;</code> can be used to tell Ipsen it should load the corresponding file
+from the <code>config.examples</code> folder and put a code block into the markdown.
+Helps create code examples without writing huge blocks of code in comments.</p>
+<h2 id="iframe-examples">IFrame Examples</h2>
+<p><code>[^] &lt;Path&gt;</code> can be used to tell Ipsen to embed an iframe in the output html.
+It will set the <code>src</code> attribute of the frame to the path provided, realtive to
+the <code>config.frames</code> folder. All iframes are 250px tall, and fill the width of
+the content area (so they are smaller on mobile).</p>
+<pre><code class="language-js">// Code can go here
+
+/*
+[@] Example/Sidebar/Path
+markdown
+markdown
+
+markdown
+[$] code-example.mjs
+
+markdown
+[$] code-example.py
+
+more stuff
+[^] iframe-example.html
+*/
+
+// or code can be here (or in both places)
+</code></pre>

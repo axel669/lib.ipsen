@@ -1,9 +1,19 @@
-window.appInfo = {
+window.siteConfig = {
+    "title": "Ipsen Documentation",
+    "defaultTheme": "dark",
     "sidebar": [
-        [
-            "Home",
-            "main"
-        ]
+        {
+            "label": "Home",
+            "items": "home"
+        },
+        {
+            "label": "Markdown Extensions",
+            "items": "markdown-extensions"
+        }
     ],
-    "title": "Ipsen Documentation"
+    "sidebarMap": {
+        "index": "main.mjs.html",
+        "home": "main.mjs.html",
+        "markdown-extensions": "steps/load-files.mjs.html"
+    }
 }

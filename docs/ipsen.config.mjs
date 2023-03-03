@@ -1,14 +1,20 @@
 export default {
     title: "Ipsen Documentation",
-    source: "../lib",
-    dest: "site",
-    home: "main.md",
-    patterns: [
-        "!default-home.md"
-    ],
-    clearDest: true,
-    readme: {
-        source: "main.md",
-        dest: ".."
-    }
+    source: {
+        dir: "../lib",
+        readme: "main.mjs",
+        patterns: [
+            "!default-home.html"
+        ],
+    },
+    dest: {
+        dir: "site",
+        clear: true,
+        readme: "../..",
+    },
+    site: {
+        defaultTheme: "dark",
+        index: "main.mjs"
+    },
+    examples: "examples"
 }
