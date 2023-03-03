@@ -1,6 +1,6 @@
 {
   "name": "@axel669/ipsen",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Library for generating documentation sites from markdown embedded in code comments",
   "main": "lib/main.mjs",
   "scripts": {
@@ -15,9 +15,13 @@
   "dependencies": {
     "@axel669/array-sort": "^0.1.0",
     "fast-glob": "^3.2.12",
-    "fs-jetpack": "^5.1.0"
+    "fs-jetpack": "^5.1.0",
+    "marked": "^4.2.12"
   },
   "files": [
     "lib"
-  ]
+  ],
+  "imports": {
+    "#config": "./lib/config.mjs"
+  }
 }
