@@ -14,8 +14,10 @@
 </script>
 
 <script>
-    // * @Components/Composed // Form
-    /**md
+    /*md
+    [@] Components/Composed // Form
+    # Form
+
     Component for creating input forms through quick definitions instead
     of needing to layout and bind everything through sets of named functions
     and bound variables.
@@ -26,10 +28,10 @@
     ## Props
     */
     /*md
-    - items\\
+    - ### items
         List of items to display in the form.
-        ```js
-        {
+        ```javascript
+        const item = {
             // The type of form input. select, text, and toggle are supported.
             type: "string",
             // The property to use in the output value for the given input.
@@ -43,12 +45,16 @@
     */
     export let items
     /*md
-    - value\\
+    - ### value
         The value to update with the various form input values. Will be an
         object with a prop for each item given. Setting this value will have no
         effect, the form only outputs to it through binding.
     */
     export let value
+
+    /*md
+    [$] vars.svelte
+    */
 
     const formValue = writable(value)
 

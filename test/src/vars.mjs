@@ -1,6 +1,3 @@
-// * @Action/vars
-// * $/examples/$vars.svelte
-
 const calcValue = value => {
     if (Array.isArray(value) === false) {
         return value
@@ -28,8 +25,13 @@ const udpateVars = (node, current, next) => {
     }
 }
 /*md
+[@] Actions/vars
 An action to help set css variables in a reactive way without making
 long, messy css strings on a node.
+
+[^] blep.txt#/wat
+
+[$] vars.svelte
 */
 const vars = (node, vars) => {
     let currentVars = vars
