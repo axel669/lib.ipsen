@@ -29,9 +29,13 @@ const udpateVars = (node, current, next) => {
 An action to help set css variables in a reactive way without making
 long, messy css strings on a node.
 
-[^] blep.txt#/wat
+{yaml}
+frame: blep.txt#/wat
+height: 400px
+code: vars.svelte
 
-[$] vars.svelte
+{yaml}
+code: vars.svelte
 */
 const vars = (node, vars) => {
     let currentVars = vars

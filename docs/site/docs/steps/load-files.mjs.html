@@ -6,15 +6,18 @@ the markdown comments without cluttering them.</p>
 generating one from the file location. Write as a normal path using <code>/</code> to
 delimit the expandable sections, and <code>//</code> can be used as an escape sequence to
 put a &quot;/&quot; into the sidebar item label.</p>
-<h2 id="code-examples-from-files">Code Examples from files</h2>
-<p><code>[$] &lt;Path&gt;</code> can be used to tell Ipsen it should load the corresponding file
-from the <code>config.examples</code> folder and put a code block into the markdown.
-Helps create code examples without writing huge blocks of code in comments.</p>
-<h2 id="iframe-examples">IFrame Examples</h2>
-<p><code>[^] &lt;Path&gt;</code> can be used to tell Ipsen to embed an iframe in the output html.
-It will set the <code>src</code> attribute of the frame to the path provided, realtive to
-the <code>config.frames</code> folder. All iframes are 250px tall, and fill the width of
-the content area (so they are smaller on mobile).</p>
+<h2 id="yaml-embeds">YAML Embeds</h2>
+<p>Using <code>{yaml}</code> at the start of a paragraph will allow the remaining lines to be
+interpreted as yaml and used to embed iframe previews and code examples from
+files.</p>
+<p>iframe examples will be embedded if the <code>frame</code> property is defined in the yaml.
+The examples are loaded from the directory in <code>config.frames</code>. iframes are 300px
+tall by default, but can be changed by defining a <code>height</code> property in the yaml.</p>
+<p>Code examples will be read from files inside the directory in <code>config.examples</code>
+and embedded if the <code>code</code> property is defined.</p>
+<p>If a single yaml block has both <code>frame</code> and <code>code</code> defined, the iframe will be
+shown as normal, but will include a toggle to show the code overlaid on top of
+the frame.</p>
 <pre><code class="language-js">// Code can go here
 
 /*
@@ -23,14 +26,27 @@ markdown
 markdown
 
 markdown
-[$] code-example.mjs
+
+{yaml}
+code: code-example.mjs
 
 markdown
-[$] code-example.py
+
+{yaml}
+code: another-example.py
 
 more stuff
-[^] iframe-example.html
+
+{yaml}
+frame: iframe-example.html
+
+frame + code behind
+
+{yaml}
+frame: cool-thing.html
+height: 500px
+code: cool-thing-code.js
 */
 
-// or code can be here (or in both places)
+// or code can also be here (or in both places)
 </code></pre>
