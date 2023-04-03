@@ -1,6 +1,6 @@
 {
   "name": "@axel669/ipsen",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Library for generating documentation sites from markdown embedded in code comments",
   "main": "lib/main.mjs",
   "scripts": {
