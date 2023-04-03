@@ -73,6 +73,46 @@
     :global(pre) {
         overflow-x: auto;
     }
+
+    :global(.toggle-view) {
+        position: relative;
+    }
+    :global(.toggle-view > pre) {
+        display: none;
+        position: absolute;
+        overflow: auto;
+        top: 32px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+    }
+    :global(.toggle-view > label) {
+        cursor: pointer;
+    }
+    :global(.toggle-view > input) {
+        display: none;
+    }
+    :global(.toggle-view > label) {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        cursor: pointer;
+        user-select: none;
+        padding: 4px;
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+    }
+    :global(.toggle-view > input:checked ~ label::before) {
+        content: "Hide"
+    }
+    :global(.toggle-view > input:not(:checked) ~ label::before) {
+        content: "Show"
+    }
+    :global(.toggle-view > input:checked ~ pre) {
+        display: block;
+    }
 </style>
 
 <AppStyle {baseline} theme={$theme} />
