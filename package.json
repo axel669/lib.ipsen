@@ -16,7 +16,8 @@
     "@axel669/array-sort": "^0.1.0",
     "fast-glob": "^3.2.12",
     "fs-jetpack": "^5.1.0",
-    "marked": "^4.2.12"
+    "marked": "^4.2.12",
+    "yaml": "^2.2.1"
   },
   "files": [
     "lib"
