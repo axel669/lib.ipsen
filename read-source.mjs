@@ -1,19 +1,24 @@
 import fs from "fs-jetpack"
 import path from "node:path"
+import render from "preact-render-to-string/jsx"
 
 import js from "./src/parser/js.mjs"
 import md from "./src/parser/md.mjs"
 import py from "./src/parser/py.mjs"
 
 import basicTemplate from "./templates/basic/generate.mjs"
+import basicPage from "./templates/basic/page.mjs"
 
 const print = (item) => console.dir(item, { depth: null })
 
 const config = {
     dir: "test",
-    parsers: [js, md, py],
-    template: basicTemplate,
     out: "site",
+    parsers: [js, md, py],
+    template: {
+        map: basicTemplate,
+        page: basicPage
+    },
 }
 
 const scan = async (config) => {
@@ -23,7 +28,6 @@ const scan = async (config) => {
             parser => parser.extensions
         ).flat(1)
     )
-    // const glob = `**/*.{${[...extensions].join(",")}}`
     const ignore = config.ignore ?? []
     const globs = [
         `**/*.{${[...extensions].join(",")}}`,
@@ -64,8 +68,29 @@ const parse = async (config, files) => {
     return info
 }
 
+const generate = async (config, mapping) => {
+    const { out } = config
+    const { page } = config.template
+    for (const [key, item] of Object.entries(mapping)) {
+        console.group(`processing: ${key}`)
+        const dest = path.resolve(out, `${key}.html`)
+
+        console.log("rendering page")
+        const output = render(
+            page({ mapping, item }),
+            {},
+            { pretty: true }
+        )
+        console.log("writing", dest)
+        fs.write(dest, output)
+        console.groupEnd()
+    }
+}
+
 const files = await scan(config)
 const info = await parse(config, files)
-await config.template(config, info)
+const mapping = await config.template.map(info)
+await generate(config, mapping)
+// await config.template(config, info)
 
 // print(info)
