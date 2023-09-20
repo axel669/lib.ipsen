@@ -2,4 +2,8 @@
 
 This is a markdown file!
 
-[@@api]()
+[@@api](py-stuff/test.py)
+
+[@@api](test.mjs:x)
+
+<div>wat</div>

@@ -1,4 +1,4 @@
-import html from "../html.mjs"
+import html from "./html.mjs"
 
 const Type = ({ info }) => {
     if (typeof info === "string") {
