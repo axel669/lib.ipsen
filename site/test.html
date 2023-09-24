@@ -3,6 +3,7 @@
         <title>
             Test?
         </title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"/>
     </head>
     <body ws-x="@app theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js">
@@ -60,36 +61,34 @@
         </script>
         <ws-screen ws-x="&amp;screen-width[100%]">
             <ws-paper ws-x="r[0px]">
-                <ws-titlebar ws-x="@fill $color[primary]" slot="header">
-                    <ws-text ws-x="$title" slot="title">
-                        Test?
-                    </ws-text>
-                    <label ws-x="@button @flat $compact" for="menu" slot="menu">
-                        <ws-icon class="ti-menu-2">
+                <div ws-x="pos[fixed] x[0px] y[0px] grid w[28px] h[32px]">
+                    <label ws-x="@button @flat $compact $color[primary] r[0px]
+                            bg[&amp;background]" for="menu" slot="menu">
+                        <ws-icon class="ti-menu-2" ws-x="t-sz[20px]">
                         </ws-icon>
                     </label>
-                </ws-titlebar>
-                <ws-flex ws-x="over[auto]" id="wrapper">
+                </div>
+                <ws-flex ws-x="over[auto] p-x[32px] p-y[0px]" id="wrapper">
                     <input type="checkbox" ws-x="hide" id="menu"/>
                     <ws-modal>
                         <label for="menu">
                         </label>
                         <ws-paper ws-x="@menu r[0px] w[] w-min[20vw]">
                             <ws-flex>
-                                <a href="#h1" ws-x="p-l[24px] t-sz[&amp;text-size-header]
-                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                <a href="#h1" ws-x="p[8px] p-l[16px] t-sz[&amp;text-size-header]
+                        t-deco[none] hover:t-deco[underline]">
                                     Markdown Demo
                                 </a>
-                                <a href="#h2" ws-x="p-l[48px] t-sz[&amp;text-size-header]
-                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                <a href="#h2" ws-x="p[8px] p-l[32px] t-sz[&amp;text-size-header]
+                        t-deco[none] hover:t-deco[underline]">
                                     API
                                 </a>
-                                <a href="#h3" ws-x="p-l[72px] t-sz[&amp;text-size-header]
-                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                <a href="#h3" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
+                        t-deco[none] hover:t-deco[underline]">
                                     x
                                 </a>
-                                <a href="#h4" ws-x="p-l[72px] t-sz[&amp;text-size-header]
-                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                <a href="#h4" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
+                        t-deco[none] hover:t-deco[underline]">
                                     fetch
                                 </a>
                                 <ws-paper>
@@ -103,7 +102,7 @@
                             </ws-flex>
                         </ws-paper>
                     </ws-modal>
-                    <div ws-x="w[min(100%,720px)] p[4px]">
+                    <div ws-x="w[min(100%,800px)]">
                         <h1 id="h1">
                             Markdown Demo
                         </h1>
