@@ -1,13 +1,31 @@
 import fs from "fs-jetpack"
 import path from "node:path"
 import url from "node:url"
-import pretty from "xml-beautifier"
 
 const print = (item) => console.dir(item, { depth: null })
 
-const config = (await import("./.ipsen/config.mjs")).default
+const importFile = (file) => import(
+    url.pathToFileURL(file)
+)
 
-const templateDir = path.resolve(config.template)
+const localRoot = path.resolve(".ipsen")
+const internalRoot = path.resolve(
+    path.dirname(
+        url.fileURLToPath(import.meta.url)
+    ),
+    "lib"
+)
+const config = (await importFile(
+    path.resolve(localRoot, "config.mjs")
+)).default
+
+const resolveDir = (type, dir) => {
+    if (dir.startsWith("#") === true) {
+        return path.resolve(internalRoot, type, dir.slice(1))
+    }
+    return path.resolve(localRoot, type, dir)
+}
+const templateDir = resolveDir("templates", config.template)
 
 const scan = async (config) => {
     const { dir, parsers } = config
@@ -56,41 +74,13 @@ const parse = async (config, files) => {
     return info
 }
 
-const renderPages = async (config, apis, md) => {
-    const { out, index = "readme.md" } = config
-    const templateModule = await import(
-        url.pathToFileURL(
-            path.resolve(templateDir, "page.mjs")
-        )
-    )
-    const page = templateModule.default
-    const pageInfo = Object.entries(md)
-    for (const [key, item] of pageInfo) {
-        console.group(`processing: ${key}`)
-        const dest =
-            (item.file.toLowerCase() === index || pageInfo.length === 1)
-            ? path.resolve(out, `index.html`)
-            : path.resolve(out, `${key}.html`)
-
-        console.log("rendering page")
-        const output = pretty(
-            page({ apis, md, item, config })
-        ).replace(
-            /(<(pre|code)[^>]*?>)\s*/gm,
-            (_, tag) => tag
-        ).replace(
-            /\s*(<\/(pre|code)[^>]*?>)/gm,
-            (_, tag) => tag
-        )
-        console.log("writing", dest)
-        fs.write(dest, output)
-        console.groupEnd()
-    }
-}
+const templateModule = await importFile(
+    path.resolve(templateDir, "render.mjs")
+)
+const renderPages = templateModule.default
 
 const files = await scan(config)
 const info = await parse(config, files)
-// const mapping = await config.template.map(info)
 const { apis, md } = info.reduce(
     ({ apis, md }, entry) => {
         const ismd = entry.ext === ".md"
@@ -108,6 +98,3 @@ fs.copy(
     path.resolve(config.out),
     { overwrite: true }
 )
-// await config.template(config, info)
-
-// print(info)
