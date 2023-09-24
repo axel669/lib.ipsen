@@ -17,6 +17,6 @@
     "xml-beautifier": "^0.5.0"
   },
   "imports": {
-    "#vhtml": "./src/v-fix/vhtml.mjs"
+    "#vhtml": "./lib/v-fix/vhtml.mjs"
   }
 }

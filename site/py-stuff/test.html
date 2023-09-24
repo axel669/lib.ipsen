@@ -1,22 +1,58 @@
 <html>
-	<head>
-		<title>Test?</title>
-	</head>
-	<body>
-		<div style="border: 1px solid black; padding: 4px;">
-			<div>x</div>
-			<div>number</div>
-			<div>this is some content</div>
-		</div>
-		<div style="border: 1px solid black; padding: 4px;">
-			<div>fetch</div>
-			<div>
-				fn
-				<span style="font-style: italic;">async</span>
-			</div>
-			<div>
-				Loads some network resources or something idk.
-			</div>
-		</div>
-	</body>
+    <head>
+        <title>
+            Test?
+        </title>
+    </head>
+    <body ws-x="@app theme[dark]">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js">
+        </script>
+        <style>
+            input[type=checkbox]+ws-modal > [ws-x~="@menu"] {
+                transition: transform var(--anim-time, 250ms) linear;
+                transform: translateX(-100%);
+            }
+            input[type=checkbox]:checked+ws-modal > [ws-x~="@menu"] {
+                transform: translateX(0%);
+            }
+            input[type=checkbox]+ws-modal {
+                display: block !important;
+                transition: visibility var(--anim-time, 250ms) linear;
+                visibility: hidden;
+            }
+            input[type=checkbox]:checked+ws-modal {
+                visibility: visible;
+            }
+        </style>
+        <ws-screen ws-x="&amp;screen-width[100%]">
+            <ws-paper ws-x="r[0px]">
+                <ws-titlebar ws-x="@fill $color[primary]" slot="header">
+                    <ws-text ws-x="$title" slot="title">
+                        Test?
+                    </ws-text>
+                    <label ws-x="@button @flat $compact" for="menu" slot="menu">
+                        <ws-icon class="ti-menu-2">
+                        </ws-icon>
+                    </label>
+                </ws-titlebar>
+                <ws-flex>
+                    <input type="checkbox" ws-x="hide" id="menu"/>
+                    <ws-modal>
+                        <label for="menu">
+                        </label>
+                        <ws-paper ws-x="@menu r[0px]">
+                            <ws-flex>
+                                <div>
+                                    py-stuff/test
+                                </div>
+                                <div>
+                                    test
+                                </div>
+                            </ws-flex>
+                        </ws-paper>
+                    </ws-modal>
+                </ws-flex>
+            </ws-paper>
+        </ws-screen>
+    </body>
 </html>

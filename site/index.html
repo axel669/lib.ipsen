@@ -1,0 +1,294 @@
+<html>
+    <head>
+        <title>
+            Test?
+        </title>
+    </head>
+    <body ws-x="@app theme[dark]">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js">
+        </script>
+        <style>
+            input[type=checkbox]+ws-modal > [ws-x~="@menu"] {
+                transition: transform var(--anim-time, 250ms) linear;
+                transform: translateX(-100%);
+            }
+            input[type=checkbox]:checked+ws-modal > [ws-x~="@menu"] {
+                transform: translateX(0%);
+            }
+            input[type=checkbox]+ws-modal {
+                display: block !important;
+                transition: visibility var(--anim-time, 250ms) linear;
+                visibility: hidden;
+            }
+            input[type=checkbox]:checked+ws-modal {
+                visibility: visible;
+            }
+
+            /* a series of global css defines for the markdown rendering */
+            blockquote {
+                margin: 0px;
+                padding: 4px;
+                padding-left: 8px;
+            }
+            blockquote > p {
+                margin: 0px;
+                border-left: 4px solid var(--primary);
+                padding: 2px;
+                padding-left: 4px;
+            }
+            h1 {
+                border-bottom: 2px solid var(--primary);
+            }
+            ul {
+                padding-inline-start: 28px;
+            }
+            iframe {
+                width: 100%;
+                height: 250px;
+                border: 1px solid var(--primary);
+                border-radius: 4px;
+            }
+            pre {
+                overflow-x: auto;
+            }
+
+            h2 {
+                border-bottom: 1px solid var(--text-color-secondary);
+            }
+        </style>
+        <script src="./blep.mjs" type="module">
+        </script>
+        <ws-screen ws-x="&amp;screen-width[100%]">
+            <ws-paper ws-x="r[0px]">
+                <ws-titlebar ws-x="@fill $color[primary]" slot="header">
+                    <ws-text ws-x="$title" slot="title">
+                        Test?
+                    </ws-text>
+                    <label ws-x="@button @flat $compact" for="menu" slot="menu">
+                        <ws-icon class="ti-menu-2">
+                        </ws-icon>
+                    </label>
+                </ws-titlebar>
+                <ws-flex ws-x="over[auto]" id="wrapper">
+                    <input type="checkbox" ws-x="hide" id="menu"/>
+                    <ws-modal>
+                        <label for="menu">
+                        </label>
+                        <ws-paper ws-x="@menu r[0px] w[] w-min[20vw]">
+                            <ws-flex>
+                                <a href="#h1" ws-x="p-l[24px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Windstorm
+                                </a>
+                                <a href="#h2" ws-x="p-l[48px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Installation
+                                </a>
+                                <a href="#h3" ws-x="p-l[72px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    CDN Link (global variable)
+                                </a>
+                                <a href="#h4" ws-x="p-l[72px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    CDN Link (module)
+                                </a>
+                                <a href="#h5" ws-x="p-l[72px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Node Modules
+                                </a>
+                                <a href="#h6" ws-x="p-l[48px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Usage
+                                </a>
+                                <a href="#h7" ws-x="p-l[72px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    @app and ws-screen
+                                </a>
+                                <a href="#h8" ws-x="p-l[72px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Custom Functions
+                                </a>
+                                <a href="#h9" ws-x="p-l[96px] t-sz[&amp;text-size-header]
+                        p[8px] t-deco[none] hover:t-deco[underline]">
+                                    Adding Custom Functions
+                                </a>
+                                <ws-paper>
+                                    <div>
+                                        readme
+                                    </div>
+                                    <div>
+                                        test
+                                    </div>
+                                </ws-paper>
+                            </ws-flex>
+                        </ws-paper>
+                    </ws-modal>
+                    <div ws-x="w[min(100%,720px)] p[4px]">
+                        <h1 id="h1">
+                            Windstorm
+                        </h1>
+                        <p>
+                            Windstorm is a library that allows element customization without needing to
+use css directly and without predefining hundreds or thousands of css classes
+with minor differences between a set of 20.
+                        </p>
+                        <p>
+                            <a href="https://axel669.github.io/lib.windstorm/">
+                                Docs Here
+                            </a>
+                        </p>
+                        <h2 id="h2">
+                            Installation
+                        </h2>
+                        <blockquote>
+                            <p>
+                                Note: the version number is not necessary in the url, but is recommended.
+Including the version ensures that if updates are made to the library, any
+compatibility issues or bugs that get introduced won&#39;t affect existing
+pages, and also allows updates to be done when intended.
+                            </p>
+                        </blockquote>
+                        <h3 id="h3">
+                            CDN Link (global variable)
+                        </h3>
+                        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        <h3 id="h4">
+                            CDN Link (module)
+                        </h3>
+                        <pre><code class="language-js">// Only scanning, no functions
+import &quot;https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/module.mjs&quot;
+// Import functions + scanning
+import wind from &quot;https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/module.mjs&quot;
+
+wind.wsx({stuff})</code></pre>
+                        <h3 id="h5">
+                            Node Modules
+                        </h3>
+                        <pre><code class="language-bash">pnpm add @axel669/windstorm</code></pre>
+                        <h2 id="h6">
+                            Usage
+                        </h2>
+                        <p>
+                            Windstorm can be used as a standalone script added to the page, or included in
+a bundle with other scripts/frameworks. Regardless of which form it&#39;s used in,
+windstorm should be included in the body of the page before the content that it
+will style in order to prevent FOUC. For static content, this means trhe script
+tag that uses it should not be async or defered. For content generated by a
+framework like React or Svelte, this should not be an issue as including
+windstorm in the build bundle will allow it to run before the framework adds
+DOM elements to the page.
+                        </p>
+                        <p>
+                            Once added to the page, windstorm will scan all current elements, and any
+elements added later for the
+                            <code>ws-x</code>
+                            attribute, and generate the necessary css
+immediately. Component css is automatically added to the head as well, so no
+extra work is needed to use any of the components. Components that transform
+standard tags will only work if the tag has the
+                            <code>ws-x</code>
+                            on it (although the value
+can be empty).
+                        </p>
+                        <blockquote>
+                            <p>
+                                Many of the windstorm components expect some css variables defined by the
+theme to be present, so a theme should always be applied to the body.
+                            </p>
+                        </blockquote>
+                        <pre><code class="language-html">&lt;body ws-x=&quot;theme[tron]&quot;&gt;
+    &lt;script src=&quot;&lt;windstorm&gt;&quot;&gt;&lt;/script&gt;
+    Static content here
+&lt;/body&gt;</code></pre>
+                        <blockquote>
+                            <p>
+                                Any html elements that do not have the
+                                <code>ws-x</code>
+                                attribute are left alone,
+allowing windstorm to play nice with any other css lib (that I tried).
+                            </p>
+                        </blockquote>
+                        <h3 id="h7">
+                            @app and ws-screen
+                        </h3>
+                        <p>
+                            The ws-screen component is designed to be a top level container for content that
+has consistent scrolling behavior for child elements across browsers and
+devices without the page resizing in weird ways from the various browser bars
+hiding and unhiding themselves from scrolling on mobile.
+                        </p>
+                        <p>
+                            As such, the use of ws-screen is entirely optional as all components will work
+without it being used, and if the regular browser scrolling behavior is not an
+issue, then ws-screen can be skipped entirely.
+                        </p>
+                        <p>
+                            If ws-screen is used, the body tag must have the
+                            <code>@app</code>
+                            wind function added to
+the
+                            <code>ws-x</code>
+                            attribute. This will setup the css properties needed for ws-screen
+to control the scrolling behavior more effectively.
+                        </p>
+                        <pre><code class="language-html">&lt;body ws-x=&quot;theme[tron] @app&quot;&gt;
+    &lt;script src=&quot;&lt;windstorm&gt;&quot;&gt;&lt;/script&gt;
+    &lt;ws-screen&gt;
+        &lt;ws-paper ws-x=&quot;@outline&quot;&gt;
+            &lt;ws-flex&gt;
+                &lt;button ws-x=&quot;@fill $color[primary] r[8px]&quot;&gt;
+                    Click Me!
+                &lt;/button&gt;
+                &lt;div ws-x=&quot;w[100px] h[200px] bg-c[teal]&quot;&gt;&lt;/div&gt;
+            &lt;/ws-flex&gt;
+        &lt;/ws-paper&gt;
+    &lt;/ws-screen&gt;
+&lt;/body&gt;</code></pre>
+                        <h3 id="h8">
+                            Custom Functions
+                        </h3>
+                        <p>
+                            Windstorm has different kinds of custom function:
+                        </p>
+                        <ul>
+                            <li>
+                                normal functions that are just text and hyphens
+                            </li>
+                            <li>
+                                component props that are prefixed with
+                                <code>$</code>
+                            </li>
+                            <li>
+                                component styles that are prefixed with
+                                <code>@</code>
+                            </li>
+                            <li>
+                                css custom properties (varaibles) that are prefixed with
+                                <code>&amp;</code>
+                            </li>
+                        </ul>
+                        <p>
+                            Internally, there is no difference in how these are detected and processed, the
+prefixes are for programmers to be able to easily see which functions are for
+what purpose in the html.
+                        </p>
+                        <h4 id="h9">
+                            Adding Custom Functions
+                        </h4>
+                        <p>
+                            Windstorm supports adding custom functions with the
+                            <code>custom(name, generate)</code>
+                            function exported by windstorm (or on the object in the browser).
+                        </p>
+                        <p>
+                            The name will be what is used in the ws-x property, and the generate function
+will be given the parsing info and a variadic list of the arguments supplied
+when used, and it should return an array of key-value pairs with the resulting
+css that should be applied.
+                        </p>
+                    </div>
+                </ws-flex>
+            </ws-paper>
+        </ws-screen>
+    </body>
+</html>
