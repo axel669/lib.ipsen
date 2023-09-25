@@ -5,4 +5,7 @@ export default {
     out: "site",
     parsers: [js, md, py],
     template: "#basic",
+    options: {
+        theme: "dark"
+    },
 }

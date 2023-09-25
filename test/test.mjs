@@ -23,7 +23,7 @@ args:
     .nested.thing|number: number of extra things?
 return: Response
 */
-const fetch = async () => { }
+export const fetch = async () => { }
 
 /*doc
 invalid

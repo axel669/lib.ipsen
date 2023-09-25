@@ -3,8 +3,10 @@
         <title>
             Test?
         </title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"/>
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/themes/prism-twilight.css" rel="stylesheet"/>
     </head>
-    <body ws-x="@app theme[dark]">
+    <body ws-x="theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js">
         </script>
         <style>
@@ -23,36 +25,179 @@
             input[type=checkbox]:checked+ws-modal {
                 visibility: visible;
             }
+
+            /* a series of global css defines for the markdown rendering */
+            blockquote {
+                margin: 0px;
+                padding: 4px;
+                padding-left: 8px;
+            }
+            blockquote > p {
+                margin: 0px;
+                border-left: 4px solid var(--primary);
+                padding: 2px;
+                padding-left: 4px;
+            }
+            h1 {
+                border-bottom: 2px solid var(--primary);
+            }
+            ul {
+                padding-inline-start: 28px;
+            }
+            iframe {
+                width: 100%;
+                height: 250px;
+                border: 1px solid var(--primary);
+                border-radius: 4px;
+            }
+            pre {
+                overflow-x: auto;
+            }
+
+            h2 {
+                border-bottom: 1px solid var(--text-color-secondary);
+            }
+
+            /*  Add style for mermaid diagrams.
+                The background color for dark mode edges happens to be the same
+                as the dark mode background color for ws-paper.
+            */
+            .mermaid {
+                background-color: var(--background);
+            }
         </style>
-        <ws-screen ws-x="&amp;screen-width[100%]">
-            <ws-paper ws-x="r[0px]">
-                <ws-titlebar ws-x="@fill $color[primary]" slot="header">
-                    <ws-text ws-x="$title" slot="title">
-                        Test?
-                    </ws-text>
-                    <label ws-x="@button @flat $compact" for="menu" slot="menu">
-                        <ws-icon class="ti-menu-2">
-                        </ws-icon>
+        <ws-paper ws-x="r[0px] w[min(100%,800px)] m-l[auto] m-r[auto]">
+            <div ws-x="pos[fixed] x[0px] y[0px] grid w[36px] h[40px]">
+                <label ws-x="@button @flat $compact $color[primary] r[0px]
+                        bg[&amp;background-layer] b-s[solid] b-c[&amp;primary]
+                        b-r-w[2px] b-b-w[2px] r-br[4px]" for="menu" slot="menu">
+                    <ws-icon class="ti-menu-2" ws-x="t-sz[20px]">
+                    </ws-icon>
+                </label>
+            </div>
+            <ws-flex ws-x="over[auto] p-x[40px] p-y[0px]" id="wrapper">
+                <input type="checkbox" ws-x="hide" id="menu"/>
+                <ws-modal ws-x="&amp;anim-time[200ms]">
+                    <label for="menu">
                     </label>
-                </ws-titlebar>
-                <ws-flex>
-                    <input type="checkbox" ws-x="hide" id="menu"/>
-                    <ws-modal>
-                        <label for="menu">
-                        </label>
-                        <ws-paper ws-x="@menu r[0px]">
-                            <ws-flex>
+                    <ws-paper ws-x="@menu r[0px] w[] w-min[20vw] w-max[320px]">
+                        <ws-flex ws-x="over-y[auto]">
+                            <ws-titlebar ws-x="$color[primary]">
+                                <ws-text ws-x="$title slot[title]">
+                                    Page Navigation
+                                </ws-text>
+                            </ws-titlebar>
+                            <a href="#h1" ws-x="p[8px] p-l[16px] t-sz[&amp;text-size-header]
+                            t-deco[none] hover:t-deco[underline] hover:b-r[3px_solid_var(--primary)]">
+                                Markdown Demo
+                            </a>
+                            <a href="#h2" ws-x="p[8px] p-l[32px] t-sz[&amp;text-size-header]
+                            t-deco[none] hover:t-deco[underline] hover:b-r[3px_solid_var(--primary)]">
+                                API
+                            </a>
+                            <a href="#h3" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
+                            t-deco[none] hover:t-deco[underline] hover:b-r[3px_solid_var(--primary)]">
+                                x
+                            </a>
+                            <a href="#h4" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
+                            t-deco[none] hover:t-deco[underline] hover:b-r[3px_solid_var(--primary)]">
+                                fetch
+                            </a>
+                            <ws-titlebar ws-x="$color[secondary]">
+                                <ws-text ws-x="$title slot[title]">
+                                    Site Navigation
+                                </ws-text>
+                            </ws-titlebar>
+                            <ws-flex ws-x="t-sz[&amp;text-size-header]">
                                 <div>
-                                    py-stuff/test
+                                    <ws-icon class="ti-folder">
+                                    </ws-icon>
+                                    py-stuff
+                                    <ws-flex ws-x="p-l[16px] p-r[0px]">
+                                        <a href="py-stuff/test.html" ws-x="block t-deco[none] hover:t-deco[underline]
+            hover:b-r[3px_solid_var(--secondary)]">
+                                            <ws-icon class="ti-file-text">
+                                            </ws-icon>
+                                            test
+                                        </a>
+                                    </ws-flex>
                                 </div>
-                                <div>
-                                    test
-                                </div>
+                                <a href="readme.html" ws-x="block t-deco[none] hover:t-deco[underline]
+            hover:b-r[3px_solid_var(--secondary)]">
+                                    <ws-icon class="ti-file-text">
+                                    </ws-icon>
+                                    readme
+                                </a>
                             </ws-flex>
-                        </ws-paper>
-                    </ws-modal>
-                </ws-flex>
-            </ws-paper>
-        </ws-screen>
+                        </ws-flex>
+                    </ws-paper>
+                </ws-modal>
+                <div>
+                    <h1 id="h1">
+                        Markdown Demo
+                    </h1>
+                    <p>
+                        This is a markdown file!
+                    </p>
+                    <h2 id="h2">
+                        API
+                    </h2>
+                    <p>
+                        API docs for the python thing or something?
+                    </p>
+                    <div id="h3">
+                    </div>
+                    <div>
+                        <h3>
+                            x
+                        </h3>
+                        <div>
+                            number
+                        </div>
+                        <div>
+                            this is some content
+                        </div>
+                    </div>
+                    <div id="h4">
+                    </div>
+                    <div>
+                        <h3>
+                            fetch
+                        </h3>
+                        <div>
+                            fn
+                            <span style="font-style: italic;">
+                                async
+                            </span>
+                        </div>
+                        <div>
+                            Loads some network resources or something idk.
+                        </div>
+                    </div>
+                    <blockquote>
+                        <p>
+                            Some block quote text to be even cooler
+                        </p>
+                    </blockquote>
+                    <p>
+                        Check it out, a mermaid diagram \o/
+                    </p>
+                    <pre class="mermaid">flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]</pre>
+                </div>
+            </ws-flex>
+        </ws-paper>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/components/prism-core.min.js">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/plugins/autoloader/prism-autoloader.min.js">
+        </script>
+        <script type="module">
+            import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+                        mermaid.initialize({ startOnLoad: true });
+        </script>
     </body>
 </html>

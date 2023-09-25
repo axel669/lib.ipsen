@@ -17,3 +17,5 @@ setInterval(
     },
     50
 )
+
+hljs.highlightAll()

@@ -4,6 +4,9 @@
             Test?
         </title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/oceanicnext.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js">
+        </script>
     </head>
     <body ws-x="@app theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js">
@@ -74,31 +77,39 @@
                         <label for="menu">
                         </label>
                         <ws-paper ws-x="@menu r[0px] w[] w-min[20vw]">
-                            <ws-flex>
+                            <ws-flex ws-x="over-y[auto]">
+                                <ws-titlebar ws-x="$color[primary]">
+                                    <ws-text ws-x="$title slot[title]">
+                                        Page Navigation
+                                    </ws-text>
+                                </ws-titlebar>
                                 <a href="#h1" ws-x="p[8px] p-l[16px] t-sz[&amp;text-size-header]
-                        t-deco[none] hover:t-deco[underline]">
+                            t-deco[none] hover:t-deco[underline]">
                                     Markdown Demo
                                 </a>
                                 <a href="#h2" ws-x="p[8px] p-l[32px] t-sz[&amp;text-size-header]
-                        t-deco[none] hover:t-deco[underline]">
+                            t-deco[none] hover:t-deco[underline]">
                                     API
                                 </a>
                                 <a href="#h3" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
-                        t-deco[none] hover:t-deco[underline]">
+                            t-deco[none] hover:t-deco[underline]">
                                     x
                                 </a>
                                 <a href="#h4" ws-x="p[8px] p-l[48px] t-sz[&amp;text-size-header]
-                        t-deco[none] hover:t-deco[underline]">
+                            t-deco[none] hover:t-deco[underline]">
                                     fetch
                                 </a>
-                                <ws-paper>
-                                    <div>
-                                        readme
-                                    </div>
-                                    <div>
-                                        test
-                                    </div>
-                                </ws-paper>
+                                <ws-titlebar ws-x="$color[secondary]">
+                                    <ws-text ws-x="$title slot[title]">
+                                        Site Navigation
+                                    </ws-text>
+                                </ws-titlebar>
+                                <div>
+                                    readme
+                                </div>
+                                <div>
+                                    test
+                                </div>
                             </ws-flex>
                         </ws-paper>
                     </ws-modal>
