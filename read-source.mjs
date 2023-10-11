@@ -1,6 +1,10 @@
 import fs from "fs-jetpack"
 import path from "node:path"
 import url from "node:url"
+// import fm from "yaml-front-matter"
+import yaml from "js-yaml"
+
+// import treeify from "./lib/treeify.mjs"
 
 const print = (item) => console.dir(item, { depth: null })
 
@@ -15,20 +19,21 @@ const internalRoot = path.resolve(
     ),
     "lib"
 )
-const config = (await importFile(
-    path.resolve(localRoot, "config.mjs")
-)).default
+const config = yaml.load(
+    fs.read(
+        path.resolve(localRoot, "config.yaml")
+    )
+)
 
 const resolveDir = (type, dir) => {
-    if (dir.startsWith("#") === true) {
+    if (dir.startsWith("@") === true) {
         return path.resolve(internalRoot, type, dir.slice(1))
     }
     return path.resolve(localRoot, type, dir)
 }
-const templateDir = resolveDir("templates", config.template)
 
 const scan = async (config) => {
-    const { dir, parsers } = config
+    const { source, parsers } = config
     const extensions = new Set(
         parsers.map(
             parser => parser.extensions
@@ -41,7 +46,7 @@ const scan = async (config) => {
         ...ignore.map(glob => `!${glob}`)
     ]
 
-    const files = fs.find(dir, { matching: globs })
+    const files = fs.find(source, { matching: globs })
 
     return files.map(
         file => file.replace(/\\/g, "/")
@@ -57,44 +62,53 @@ const parse = async (config, files) => {
         },
         {}
     )
-    const info = []
+    const data = {}
     for (const file of files) {
         const ext = path.extname(file)
         const code = fs.read(file)
         const parser = parsers[ext]
-        const content = parser.parse(code)
+        const items = parser.parse(code)
+        const filepath = file.slice(config.source.length + 1)
 
-        info.push({
-            ext,
-            content,
-            file: file.slice(config.dir.length + 1),
-            type: parser.type,
-        })
+        const contentInfo = {
+            items,
+            path: filepath,
+            contentPath: filepath.slice(0, -ext.length),
+        }
+
+        data[contentInfo.path] = contentInfo
     }
-    return info
+    return data
 }
 
-const templateModule = await importFile(
-    path.resolve(templateDir, "render.mjs")
-)
-const renderPages = templateModule.default
+const destDir = path.resolve(config.dest)
 
 const files = await scan(config)
-const info = await parse(config, files)
-const { apis, md } = info.reduce(
-    ({ apis, md }, entry) => {
-        const ismd = entry.ext === ".md"
-        const key = ismd ? entry.file.slice(0, -3) : entry.file
-        const target = ismd ? md : apis
+const data = await parse(config, files)
 
-        target[key] = entry
-        return { apis, md }
-    },
-    { apis: {}, md: {} }
-)
-await renderPages(config, apis, md)
-fs.copy(
-    path.resolve(templateDir, "static"),
-    path.resolve(config.out),
-    { overwrite: true }
-)
+// const index = info.content[config.index?.file ?? "readme.md"]
+// const content = Object.values(info.content).filter(item => item !== index)
+// const fileTree = treeify(content)
+
+// info.contentTree = config.modifyTree?.(fileTree) ?? fileTree
+// info.contentTree.children.unshift({
+//     name: config.index.name ?? "Home",
+//     out: "index",
+//     type: "file",
+//     source: index?.path ?? null
+// })
+
+const render = (node) => {
+    if (node.type === "dir") {
+        node.children.forEach(render)
+        return
+    }
+
+    const destFile = path.resolve(
+        destDir,
+        `${node.out}.html`
+    )
+    console.log(destFile)
+}
+
+render(info.contentTree)

@@ -14,9 +14,8 @@
     "htm": "^3.1.1",
     "js-yaml": "^4.1.0",
     "marked": "^9.0.2",
-    "xml-beautifier": "^0.5.0"
-  },
-  "imports": {
-    "#vhtml": "./lib/v-fix/vhtml.mjs"
+    "preact-render-to-string": "^6.2.1",
+    "xml-beautifier": "^0.5.0",
+    "yaml-front-matter": "^4.1.1"
   }
 }

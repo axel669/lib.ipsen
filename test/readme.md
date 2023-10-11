@@ -5,6 +5,8 @@ with minor differences between a set of 20.
 
 [Docs Here](https://axel669.github.io/lib.windstorm/)
 
+[fetch : test.mjs]: ##
+
 ## Installation
 
 > Note: the version number is not necessary in the url, but is recommended.

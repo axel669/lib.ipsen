@@ -8,7 +8,7 @@ const x = 0
 moreCode()
 
 /*doc
-type: fn.async
+type: function.async
 desc: Loads some network resources or something idk.
 args:
 -   url|string: URL to request

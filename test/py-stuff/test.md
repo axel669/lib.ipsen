@@ -5,7 +5,7 @@ This is a markdown file!
 ## API
 API docs for the python thing or something?
 
-[@@api](py-stuff/test.py)
+[:test.py]: ###
 
 > Some block quote text to be even cooler
 
@@ -18,3 +18,8 @@ flowchart TD
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]
 ```
+
+# Another Top Level
+
+## With more sections
+Like Odat does to screw things up

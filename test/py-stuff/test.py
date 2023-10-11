@@ -8,8 +8,8 @@ x = 0
 moreCode()
 
 """doc
-type: fn.async
-desc: Loads some network resources or something idk.
+type: function.async
+desc: Loads some network resources or something idk. **testing** _stuff_
 args:
 -   url|string: URL to request
 -   options: Options for the thing?

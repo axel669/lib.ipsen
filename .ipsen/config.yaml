@@ -1,0 +1,12 @@
+source: test/site.md
+dest: site
+parsers:
+  mjs: "@js"
+  js: "@js"
+  cjs: "@js"
+  py: "@py"
+  yaml: "@yaml"
+  json: "@json"
+template: "test"
+options:
+  theme: dark
