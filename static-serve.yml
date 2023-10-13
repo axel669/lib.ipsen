@@ -1,3 +1,3 @@
 port: 45067
 sources:
-- dir: site
+- dir: example/site
