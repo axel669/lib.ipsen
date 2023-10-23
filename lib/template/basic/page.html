@@ -19,11 +19,6 @@
             </div>
             <ws-flex ws-x="over[auto] p-x[40px] p-y[0px]" id="wrapper">
                 {|@ "sidebar.html" |}
-                {|^ for $.data["odat/music.yaml"].artists -> info |}
-                    <div>
-                        <a href="{| info.url |}" target="_blank">{| info.name |}</a>
-                    </div>
-                {||}
                 <div>
                     {|* $.content |}
                 </div>
@@ -37,7 +32,5 @@
                 querySelector: ".mermaid"
             })
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/components/prism-core.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     </body>
 </html>

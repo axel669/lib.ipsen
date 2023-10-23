@@ -14,6 +14,9 @@ dependencies:
   marked:
     specifier: ^9.0.2
     version: 9.0.2
+  prismjs:
+    specifier: ^1.29.0
+    version: 1.29.0
   xml-beautifier:
     specifier: ^0.5.0
     version: 0.5.0
@@ -86,6 +89,11 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
+    dev: false
+
+  /prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
     dev: false
 
   /repeat-string@1.6.1:

@@ -1,4 +1,4 @@
 [Home](readme.md)
 
 - Python Stuff
-    - [Test](py-stuff/test.md)
+    - [:warning: Test](py-stuff/test.md#page.html)
