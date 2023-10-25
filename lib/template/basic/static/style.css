@@ -17,6 +17,17 @@ input[type=checkbox]:checked+ws-modal {
     visibility: visible;
 }
 
+pre-header {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+code-area:hover>pre-header {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* a series of global css defines for the markdown rendering */
 blockquote {
     margin: 0px;
