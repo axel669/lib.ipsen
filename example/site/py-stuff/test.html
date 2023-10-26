@@ -10,10 +10,12 @@
     <body ws-x="theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
         <ws-paper ws-x="r[0px] w[min(100%,800px)] m-l[auto] m-r[auto]">
-            <div ws-x="pos[fixed] x[0px] y[0px] grid w[36px] h[40px]">
+            <div ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
+            tr[translateX(max(-400px,-50vw))]">
                 <label ws-x="@button @flat $compact $color[primary] r[0px]
                 bg[&background-layer] b-s[solid] b-c[&primary]
-                b-r-w[2px] b-b-w[2px] r-br[4px]" for="menu">
+                b-r-w[2px] b-b-w[2px] b-l-w[2px] r-br[4px] r-bl[4px]"
+                for="menu">
                     <ws-icon class="ti-menu-2" ws-x="t-sz[20px]" />
                 </label>
             </div>
@@ -123,18 +125,28 @@
 </ws-modal>
 
                 <div>
-                    <h1 id="1-markdown-demo">Markdown Demo</h1>
+                    <h1 id="1-markdown-demo">
+                <a href="#1-markdown-demo">Markdown Demo</a>
+            </h1>
 <p>This is a markdown file!</p>
-<h2 id="1.1-api">API</h2>
+<h2 id="1.1-api">
+                <a href="#1.1-api">API</a>
+            </h2>
 <p>API docs for the python thing or something?</p>
-<h3 id="1.1.1-x">x</h3>
+<h3 id="1.1.1-x">
+                <a href="#1.1.1-x">x</a>
+            </h3>
 <p><strong>number</strong></p>
 <p>this is some content</p>
-<h3 id="1.1.2-fetch">fetch</h3>
+<h3 id="1.1.2-fetch">
+                <a href="#1.1.2-fetch">fetch</a>
+            </h3>
 <p><strong>function</strong>
 <em>async</em></p>
 <p>Loads some network resources or something idk. <strong>testing</strong> <em>stuff</em></p>
-<h4 id="1.1.2.1-arguments">Arguments</h4>
+<h4 id="1.1.2.1-arguments">
+                <a href="#1.1.2.1-arguments">Arguments</a>
+            </h4>
 <ws-flex ws-x="p[0px]">
 
 <ws-paper ws-x="@outline b-w[2px] m-l[16px]">
@@ -220,13 +232,38 @@
 <p>Some block quote text to be even cooler</p>
 </blockquote>
 <p>Check it out, a mermaid diagram \o/</p>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test6() {
+            navigator.clipboard.writeText(
+                "flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[iPhone]\n    C -->|Three| F[fa:fa-car Car]"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test6()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-mermaid"><code class="language-mermaid"><span class="token keyword">flowchart</span> TD
+    A<span class="token text string">[Christmas]</span> <span class="token arrow operator">--></span><span class="token label property">|Get money|</span> B<span class="token text string">(Go shopping)</span>
+    B <span class="token arrow operator">--></span> C<span class="token text string">{Let me think}</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|One|</span> D<span class="token text string">[Laptop]</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|Two|</span> E<span class="token text string">[iPhone]</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|Three|</span> F<span class="token text string">[fa:fa-car Car]</span></code></pre>
+</code-area>
 <pre class="mermaid">flowchart TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]</pre><h1 id="2-another-top-level">Another Top Level</h1>
-<h2 id="2.1-with-more-sections">With more sections</h2>
+    C -->|Three| F[fa:fa-car Car]</pre><h1 id="2-another-top-level">
+                <a href="#2-another-top-level">Another Top Level</a>
+            </h1>
+<h2 id="2.1-with-more-sections">
+                <a href="#2.1-with-more-sections">With more sections</a>
+            </h2>
 <p>Like Odat does to screw things up</p>
 
                 </div>

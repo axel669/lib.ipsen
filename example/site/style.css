@@ -17,6 +17,28 @@ input[type=checkbox]:checked+ws-modal {
     visibility: visible;
 }
 
+pre-header {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+code-area:hover>pre-header {
+    visibility: visible;
+    opacity: 1;
+}
+
+:is(h1, h2, h3, h4, h5, h6) > a {
+    color: var(--text-color-normal);
+    text-decoration: none;
+}
+:is(h1, h2, h3, h4, h5, h6) > a:hover {
+    text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 6px;
+}
+
 /* a series of global css defines for the markdown rendering */
 blockquote {
     margin: 0px;
@@ -24,7 +46,7 @@ blockquote {
     padding-left: 8px;
 }
 
-blockquote>p {
+blockquote > p {
     margin: 0px;
     border-left: 4px solid var(--primary);
     padding: 2px;
@@ -33,10 +55,6 @@ blockquote>p {
 
 ul p {
     margin: 2px;
-}
-
-h1 {
-    border-bottom: 2px solid var(--primary);
 }
 
 ul {
@@ -53,6 +71,10 @@ iframe {
 
 pre {
     overflow-x: auto;
+}
+
+h1 {
+    border-bottom: 2px solid var(--primary);
 }
 
 h2 {
