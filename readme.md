@@ -48,8 +48,8 @@ project
             page.html
             vars.json
             static
-            <other template files>
-    <project files>
+            &lt;other template files>
+    &lt;project files>
 ```
 
 ### config.yml
