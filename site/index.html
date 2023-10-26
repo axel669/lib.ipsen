@@ -10,10 +10,12 @@
     <body ws-x="theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
         <ws-paper ws-x="r[0px] w[min(100%,800px)] m-l[auto] m-r[auto]">
-            <div ws-x="pos[fixed] x[0px] y[0px] grid w[36px] h[40px]">
+            <div ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
+            tr[translateX(max(-400px,-50vw))]">
                 <label ws-x="@button @flat $compact $color[primary] r[0px]
                 bg[&background-layer] b-s[solid] b-c[&primary]
-                b-r-w[2px] b-b-w[2px] r-br[4px]" for="menu">
+                b-r-w[2px] b-b-w[2px] b-l-w[2px] r-br[4px] r-bl[4px]"
+                for="menu">
                     <ws-icon class="ti-menu-2" ws-x="t-sz[20px]" />
                 </label>
             </div>
@@ -22,42 +24,85 @@
 <ws-modal ws-x="&anim-time[200ms]">
     <label for="menu"></label>
     <ws-paper ws-x="@menu r[0px] w[] w-min[20vw] w-max[320px]">
-        <ws-flex ws-x="over-y[auto]">
+        <ws-flex ws-x="over-y[auto] p-b[16px]">
             <ws-titlebar ws-x="$color[primary]">
                 <ws-text ws-x="$title slot[title]">
                     Page Navigation
                 </ws-text>
             </ws-titlebar>
             <ws-flex ws-x="p[0px]">
-                
                     <a href="#1-ipsen"
                     ws-x="p[8px] p-l[16px] t-sz[&text-size-header]
                     t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
                     >
                         Ipsen
                     </a>
-                
                     <a href="#1.1-installation"
                     ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
                     t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
                     >
                         Installation
                     </a>
-                
                     <a href="#1.2-usage"
                     ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
                     t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
                     >
                         Usage
                     </a>
-                
                     <a href="#1.3-ipsen-folder"
                     ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
                     t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
                     >
                         .ipsen Folder
                     </a>
-                
+                    <a href="#1.3.1-configyml"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        config.yml
+                    </a>
+                    <a href="#1.3.2-source-sitemd"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        source (site.md)
+                    </a>
+                    <a href="#1.3.3-parsers"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        Parsers
+                    </a>
+                    <a href="#1.3.4-static-folder"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        Static Folder
+                    </a>
+                    <a href="#1.4-template-folder"
+                    ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        Template Folder
+                    </a>
+                    <a href="#1.4.1-pagehtml"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        page.html
+                    </a>
+                    <a href="#1.4.2-codehtml"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        code.html
+                    </a>
+                    <a href="#1.4.3-varsjson"
+                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
+                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    >
+                        vars.json
+                    </a>
             </ws-flex>
 
             <ws-titlebar ws-x="$color[secondary]">
@@ -68,7 +113,6 @@
             <ws-flex ws-x="t-sz[&text-size-header]">
                 
     <div>
-        
             <a href="/index.html"
             ws-x="block t-deco[none] hover:c[&secondary]
             hover:b-r[3px_solid_var(--secondary)]">
@@ -79,9 +123,7 @@
                 Home
             </a>
         
-        
     </div>
-
 
             </ws-flex>
         </ws-flex>
@@ -89,29 +131,220 @@
 </ws-modal>
 
                 <div>
-                    <h1 id="1-ipsen">Ipsen</h1>
+                    <h1 id="1-ipsen">
+                <a href="#1-ipsen">Ipsen</a>
+            </h1>
 <p>A static site generator that aims to be simple and powerful.</p>
-<h2 id="1.1-installation">Installation</h2>
-<pre><code class="language-bash">pnpm add @axel669/ipsen
-</code></pre>
-<h2 id="1.2-usage">Usage</h2>
+<blockquote>
+<p>⚠ this documentation is very limited while more testing is going on.
+More comprehensive documentation will be available when Ipsen is closer to
+a production release.</p>
+</blockquote>
+<h2 id="1.1-installation">
+                <a href="#1.1-installation">Installation</a>
+            </h2>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test1() {
+            navigator.clipboard.writeText(
+                "pnpm add @axel669/ipsen"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test1()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-bash"><code class="language-bash"><span class="token function">pnpm</span> <span class="token function">add</span> @axel669/ipsen</code></pre>
+</code-area>
+<h2 id="1.2-usage">
+                <a href="#1.2-usage">Usage</a>
+            </h2>
 <p>Ipsen uses a <code>.ipsen</code> folder in project root to determine configuration and
 other things (see below).</p>
-<pre><code class="language-bash">ipsen
-</code></pre>
-<h2 id="1.3-ipsen-folder">.ipsen Folder</h2>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test2() {
+            navigator.clipboard.writeText(
+                "npx ipsen"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test2()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-bash"><code class="language-bash">npx ipsen</code></pre>
+</code-area>
+<p>Or in <code>package.json</code></p>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test3() {
+            navigator.clipboard.writeText(
+                "{\n  ...,\n  \"scripts\": {\n    \"render-docs\": \"ipsen\"\n  },\n  ...\n}"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test3()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  ...<span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"render-docs"</span><span class="token operator">:</span> <span class="token string">"ipsen"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+</code-area>
+<p>That&#39;s really it. All the configuration and custom files are read from the
+<code>.ipsen</code> folder.</p>
+<h2 id="1.3-ipsen-folder">
+                <a href="#1.3-ipsen-folder">.ipsen Folder</a>
+            </h2>
+<p>The <code>config.yml</code> file is the only file required by ipsen. The other folders are
+optional, and only used when rendering from custom templates/parsers.</p>
+<p>If the data folder is present, the files will be loaded from it using the
+parsers configured in the config and loaded into <code>$.data[&lt;filename&gt;]</code> for the
+templates to use.</p>
 <pre><code>project
     .ipsen
         config.yml
         parser
         static
         template
+            code.html
             page.html
             vars.json
             static
-            &lt;other template files&gt;
-    &lt;project files&gt;
-</code></pre>
+            <other template files>
+    <project files></code></pre><h3 id="1.3.1-configyml">
+                <a href="#1.3.1-configyml">config.yml</a>
+            </h3>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test4() {
+            navigator.clipboard.writeText(
+                "# The source markdown file that lists the contents of the site.\nsource: site.md\n# The folder to save the generated files into.\ndest: site\n# Custom parsers for loading data out of files and into marked areas to make api\n# documentation easier, and allowing the api docs to stay in the code files.\n# Parsers starting with \"@\" will be loaded from the parsers available in Ipsen.\n# Each extension needs to be configured individually even if they use the same\n# parser.\nparsers:\n  mjs: \"@js\"\n  js: \"@js\"\n  cjs: \"@js\"\n  py: \"@py\"\n  yaml: \"@yaml\"\n  json: \"@json\"\n# The name of the template to use for generating the site. Names starting with\n# \"@\" will resolve to the templates provided by ipsen, any other name will be\n# resolved in the .ipsen/template folder in the project.\n# The template will always load the page.html file from the template folder and\n# use it to render the pages of the site.\ntemplate: \"@basic\"\n# extra options available to the template as $.options. Any type of value allowed.\noptions:\n  theme: dark"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test4()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-yml"><code class="language-yml"><span class="token comment"># The source markdown file that lists the contents of the site.</span>
+<span class="token key atrule">source</span><span class="token punctuation">:</span> site.md
+<span class="token comment"># The folder to save the generated files into.</span>
+<span class="token key atrule">dest</span><span class="token punctuation">:</span> site
+<span class="token comment"># Custom parsers for loading data out of files and into marked areas to make api</span>
+<span class="token comment"># documentation easier, and allowing the api docs to stay in the code files.</span>
+<span class="token comment"># Parsers starting with "@" will be loaded from the parsers available in Ipsen.</span>
+<span class="token comment"># Each extension needs to be configured individually even if they use the same</span>
+<span class="token comment"># parser.</span>
+<span class="token key atrule">parsers</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mjs</span><span class="token punctuation">:</span> <span class="token string">"@js"</span>
+  <span class="token key atrule">js</span><span class="token punctuation">:</span> <span class="token string">"@js"</span>
+  <span class="token key atrule">cjs</span><span class="token punctuation">:</span> <span class="token string">"@js"</span>
+  <span class="token key atrule">py</span><span class="token punctuation">:</span> <span class="token string">"@py"</span>
+  <span class="token key atrule">yaml</span><span class="token punctuation">:</span> <span class="token string">"@yaml"</span>
+  <span class="token key atrule">json</span><span class="token punctuation">:</span> <span class="token string">"@json"</span>
+<span class="token comment"># The name of the template to use for generating the site. Names starting with</span>
+<span class="token comment"># "@" will resolve to the templates provided by ipsen, any other name will be</span>
+<span class="token comment"># resolved in the .ipsen/template folder in the project.</span>
+<span class="token comment"># The template will always load the page.html file from the template folder and</span>
+<span class="token comment"># use it to render the pages of the site.</span>
+<span class="token key atrule">template</span><span class="token punctuation">:</span> <span class="token string">"@basic"</span>
+<span class="token comment"># extra options available to the template as $.options. Any type of value allowed.</span>
+<span class="token key atrule">options</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> dark</code></pre>
+</code-area>
+<blockquote>
+<p>The <code>.ipsen</code> folder and the <code>source</code>/<code>dest</code> options of the config are relative
+to the cwd where Ipsen is being run.</p>
+</blockquote>
+<h3 id="1.3.2-source-sitemd">
+                <a href="#1.3.2-source-sitemd">source (site.md)</a>
+            </h3>
+<p>The source file should be a markdown file and list the contents of the site that
+need to be rendered. It will also serve to build the sidebar menu for site
+navigation. Links will determine which files are rendered (and their titles),
+and text can be used to name any section of files in the list without rendering
+content at that point.</p>
+<p>Only one link should be outside of a list, and it will be used as the index
+file for the site. All files except the index will generate an html file of the
+same name with the extension changed. The index file will always be saved as
+<code>index.html</code> to allow standard website configurations to play nice with the
+rendered content.</p>
+<p>The link targets can optionally have a hash that says which file within the
+template should be used to render the page, defaults to <code>page.html</code>.</p>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test5() {
+            navigator.clipboard.writeText(
+                "[Home](readme.md)\n\n- Python Stuff\n    - [Test](py-stuff/test.md#thing.html)"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test5()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-md"><code class="language-md"><span class="token url">[<span class="token content">Home</span>](<span class="token url">readme.md</span>)</span>
+
+<span class="token list punctuation">-</span> Python Stuff
+    <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Test</span>](<span class="token url">py-stuff/test.md#thing.html</span>)</span></code></pre>
+</code-area>
+<blockquote>
+<p>Currently Ipsen assumes the static site will be at the root of the domain
+it&#39;s hosted at, so all paths are <code>/&lt;file&gt;</code> within the html to make sure that
+any file can link to any othe file without needing to calculate the relative
+path between every file and every other file in the output.</p>
+</blockquote>
+<h3 id="1.3.3-parsers">
+                <a href="#1.3.3-parsers">Parsers</a>
+            </h3>
+<p>Need something here for docs.</p>
+<h3 id="1.3.4-static-folder">
+                <a href="#1.3.4-static-folder">Static Folder</a>
+            </h3>
+<p>If there is a static folder in the <code>.ipsen</code> folder, the files will be
+copied to the output directory when the site is rendered.</p>
+<h2 id="1.4-template-folder">
+                <a href="#1.4-template-folder">Template Folder</a>
+            </h2>
+<p>The template folder within the <code>.ipsen</code> folder can have a number of files that
+will be used by the Burger Template engine within ipsen to generate the pages
+for the static site. Ipsen also has a <code>@basic</code> template available that can be
+used, or copied and modified for further customization.</p>
+<h3 id="1.4.1-pagehtml">
+                <a href="#1.4.1-pagehtml">page.html</a>
+            </h3>
+<p>The default file that ipsen will look for when rendering a page.</p>
+<h3 id="1.4.2-codehtml">
+                <a href="#1.4.2-codehtml">code.html</a>
+            </h3>
+<p>When a code block is rendered, Ipsen will look for this file in the template
+and use it to render the syntax highlighted html for the code. The basic
+template uses this file to add a copy button to quickly copy code. If this
+file is not found, Ipsen will just render the highlighted code with no extra
+controls or other modifications.</p>
+<h3 id="1.4.3-varsjson">
+                <a href="#1.4.3-varsjson">vars.json</a>
+            </h3>
+<p>A json file that can have any number of variables available to templates as
+<code>$.vars</code>. Ipsen does not read the contents of this file for anything it does on
+its own, so it can have any format the template wants.</p>
 
                 </div>
             </ws-flex>
@@ -124,7 +357,5 @@ other things (see below).</p>
                 querySelector: ".mermaid"
             })
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/components/prism-core.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     </body>
 </html>
