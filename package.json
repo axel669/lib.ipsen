@@ -1,11 +1,10 @@
 {
   "name": "@axel669/ipsen",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.0-beta.2",
   "description": "",
   "main": "lib/main.mjs",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "ipsen": "./lib/cli.mjs"
