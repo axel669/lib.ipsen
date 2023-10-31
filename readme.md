@@ -125,6 +125,9 @@ will be used by the Burger Template engine within ipsen to generate the pages
 for the static site. Ipsen also has a `@basic` template available that can be
 used, or copied and modified for further customization.
 
+Details for the Buger Template syntax can be found in the page about the
+templates accesible from the sidebar menu.
+
 ### page.html
 The default file that ipsen will look for when rendering a page.
 
