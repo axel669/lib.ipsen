@@ -3,6 +3,8 @@
         <title>Home</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
 
+
+
         <base href="" />
         <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/themes/prism-twilight.css" rel="stylesheet" />
         <link href="style.css" rel="stylesheet" />
@@ -11,16 +13,18 @@
     <body ws-x="$theme[dark]">
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.1/dist/browser.js"></script>
         <ws-paper ws-x="r[0px] w[min(100%, 800px)] m.l[auto] m.r[auto]">
-            <div ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
-            tf[translateX(max(-400px, -50vw))]">
-                <label ws-x="$button $flat $compact $color[primary] r[0px]
-                bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] b.t.w[0px] r.b[4px]"
-                for="menu">
-                    <ws-icon class="ti-menu-2" ws-x="t.sz[20px]" />
-                </label>
-            </div>
-            <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper">
-                <input type="checkbox" ws-x="hide" id="menu" />
+            <div
+ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
+tf[translateX(max(-400px, -50vw))]">
+    <label
+    ws-x="$button $flat $compact $color[primary] r[0px]
+    bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] b.t.w[0px] r.b[4px]"
+    for="menu">
+        <ws-icon class="ti-menu-2" ws-x="t.sz[20px]" />
+    </label>
+</div>
+
+<input type="checkbox" ws-x="hide" id="menu" />
 <ws-modal>
     <label for="menu"></label>
     <ws-paper ws-x="$menu r[0px] w.min[20vw] w.max[320px]">
@@ -156,6 +160,7 @@
     </ws-paper>
 </ws-modal>
 
+            <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper">
                 <div>
                     <h1 id="1-windstorm">
                 <a href="#1-windstorm">Windstorm</a>
