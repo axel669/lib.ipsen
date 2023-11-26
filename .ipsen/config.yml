@@ -10,3 +10,10 @@ parsers:
 template: "@basic"
 options:
   theme: dark
+  github: https://github.com/axel669/lib.ipsen
+  favicon: https://axel669.net/images/megaman-rounded.png
+  opengraph:
+    title: Ipsen
+    description: A static site generator that aims to be simple and powerful.
+    image: https://axel669.net/images/megaman-rounded.png
+    themeColor: "#00EEEE"
