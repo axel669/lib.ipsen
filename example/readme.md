@@ -5,7 +5,9 @@ with minor differences between a set of 20.
 
 [Docs Here](https://axel669.github.io/lib.windstorm/)
 
-[fetch : test.mjs : api/api.md]: ##
+[package-info.md]: #
+
+[api/api.md : test.mjs : fetch]: ##
 
 ## Installation
 

@@ -3,89 +3,90 @@
         <title>⚠ Test</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
 
+        <base href="../" />
         <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/themes/prism-twilight.css" rel="stylesheet" />
-        <link href="/style.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
     </head>
 
-    <body ws-x="theme[dark]">
-        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
-        <ws-paper ws-x="r[0px] w[min(100%,800px)] m-l[auto] m-r[auto]">
+    <body ws-x="$theme[dark]">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.1/dist/browser.js"></script>
+        <ws-paper ws-x="r[0px] w[min(100%, 800px)] m.l[auto] m.r[auto]">
             <div ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
-            tr[translateX(max(-400px,-50vw))]">
-                <label ws-x="@button @flat $compact $color[primary] r[0px]
-                bg[&background-layer] b-s[solid] b-c[&primary]
-                b-r-w[2px] b-b-w[2px] b-l-w[2px] r-br[4px] r-bl[4px]"
+            tf[translateX(max(-400px, -50vw))]">
+                <label ws-x="$button $flat $compact $color[primary] r[0px]
+                bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] b.t.w[0px] r.b[4px]"
                 for="menu">
-                    <ws-icon class="ti-menu-2" ws-x="t-sz[20px]" />
+                    <ws-icon class="ti-menu-2" ws-x="t.sz[20px]" />
                 </label>
             </div>
-            <ws-flex ws-x="over[auto] p-x[40px] p-y[0px]" id="wrapper">
+            <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper">
                 <input type="checkbox" ws-x="hide" id="menu" />
-<ws-modal ws-x="&anim-time[200ms]">
+<ws-modal>
     <label for="menu"></label>
-    <ws-paper ws-x="@menu r[0px] w[] w-min[20vw] w-max[320px]">
-        <ws-flex ws-x="over-y[auto]">
+    <ws-paper ws-x="$menu r[0px] w.min[20vw] w.max[320px]">
+        <ws-flex ws-x="over.y[auto] p.b[16px]">
             <ws-titlebar ws-x="$color[primary]">
-                <ws-text ws-x="$title slot[title]">
+                <ws-text ws-x="$title" slot="title">
                     Page Navigation
                 </ws-text>
             </ws-titlebar>
             <ws-flex ws-x="p[0px]">
                     <a href="#1-markdown-demo"
-                    ws-x="p[8px] p-l[16px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[16px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         Markdown Demo
                     </a>
                     <a href="#1.1-api"
-                    ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[32px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         API
                     </a>
                     <a href="#1.1.1-x"
-                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[48px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         x
                     </a>
                     <a href="#1.1.2-fetch"
-                    ws-x="p[8px] p-l[48px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[48px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         fetch
                     </a>
                     <a href="#1.1.2.1-arguments"
-                    ws-x="p[8px] p-l[64px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[64px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         Arguments
                     </a>
                     <a href="#2-another-top-level"
-                    ws-x="p[8px] p-l[16px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[16px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         Another Top Level
                     </a>
                     <a href="#2.1-with-more-sections"
-                    ws-x="p[8px] p-l[32px] t-sz[&text-size-header]
-                    t-deco[none] hover:c[&primary] hover:b-r[3px_solid_var(--primary)]"
+                    ws-x="p[8px] p.l[32px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
                     >
                         With more sections
                     </a>
             </ws-flex>
 
             <ws-titlebar ws-x="$color[secondary]">
-                <ws-text ws-x="$title slot[title]">
+                <ws-text ws-x="$title" slot="title">
                     Site Navigation
                 </ws-text>
             </ws-titlebar>
-            <ws-flex ws-x="t-sz[&text-size-header]">
+            <ws-flex ws-x="t.sz[&text-size-header]">
                 
     <div>
-            <a href="/index.html"
-            ws-x="block t-deco[none] hover:c[&secondary]
-            hover:b-r[3px_solid_var(--secondary)]">
+            <a href=""
+            style="display: block;"
+            ws-x="t.dec[none] c:hover[&secondary]
+            b.r:hover[3px solid &secondary]">
                 
     <ws-icon class="ti-file-text"></ws-icon>
 
@@ -101,12 +102,13 @@
 
                 Python Stuff
             </div>
-            <ws-flex ws-x="p-l[12px]">
+            <ws-flex ws-x="p.l[12px]">
                 
     <div>
-            <a href="/py-stuff/test.html"
-            ws-x="block t-deco[none] hover:c[&secondary]
-            hover:b-r[3px_solid_var(--secondary)]">
+            <a href="./python-stuff/test.html"
+            style="display: block;"
+            ws-x="t.dec[none] c:hover[&secondary]
+            b.r:hover[3px solid &secondary]">
                 
     <ws-icon class="ti-file-text"></ws-icon>
 
@@ -149,7 +151,7 @@
             </h4>
 <ws-flex ws-x="p[0px]">
 
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>url</strong>
@@ -162,7 +164,7 @@
         
 </ws-flex>
 </ws-paper>
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>options</strong>
@@ -170,7 +172,7 @@
         <div><p>Options for the thing?</p>
 </div>
         
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>headers</strong>
@@ -183,7 +185,7 @@
         
 </ws-flex>
 </ws-paper>
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>method</strong>
@@ -196,7 +198,7 @@
         
 </ws-flex>
 </ws-paper>
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>nested</strong>
@@ -204,7 +206,7 @@
         <div><p>extra stuff</p>
 </div>
         
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>thing</strong>
@@ -234,15 +236,15 @@
 <p>Check it out, a mermaid diagram \o/</p>
 <code-area ws-x="pos[relative]">
     <script>
-        function test6() {
+        function test7() {
             navigator.clipboard.writeText(
                 "flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[iPhone]\n    C -->|Three| F[fa:fa-car Car]"
             )
         }
     </script>
     <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
-        <button ws-x="@fill $color[primary] $compact p-y[2px]"
-        onclick="test6()">
+        <button ws-x="$fill $color[primary] $compact p.y[2px]"
+        onclick="test7()">
             Copy
         </button>
     </pre-header>

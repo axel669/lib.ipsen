@@ -5,7 +5,7 @@ This is a markdown file!
 ## API
 API docs for the python thing or something?
 
-[:test.py : api/api.md]: ###
+[api/api.md : test.py :]: ###
 
 > Some block quote text to be even cooler
 

@@ -1,5 +1,5 @@
 {|^ for $.args -> arg |}
-<ws-paper ws-x="@outline b-w[2px] m-l[16px]">
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
     <ws-flex>
         <div>
             <strong>{| arg.name |}</strong>

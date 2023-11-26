@@ -8,6 +8,6 @@ parsers:
   yaml: "@yaml"
   json: "@json"
   md: "@md"
-template: "@basic"
+template: custom
 options:
   theme: dark
