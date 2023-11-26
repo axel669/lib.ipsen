@@ -39,10 +39,13 @@ following arguments to be accessed as `$.<name>`:
         sublist,
     }
     ```
-- **data**
+- **file(name)**
 
-    Access to any data files that are in the `.ipsen/data` directory.
-    `$.data["filename"]`
+    Loads any file in the source directory and gives access to the parsed
+    information (uses the parsers defined). The name of the file is the path
+    relative to the folder ipsen is run in and **not** the current md file being
+    processed, because template files are reused between md files, making
+    relative paths extremely hard to navigate as the number of files increases.
 - **headings**
 
     The list of headings in the current file.

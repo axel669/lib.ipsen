@@ -1,4 +1,4 @@
-# Ipsen
+# Ipsen (Beta)
 
 A static site generator that aims to be simple and powerful.
 
@@ -8,7 +8,7 @@ A static site generator that aims to be simple and powerful.
 
 ## Installation
 ```bash
-pnpm add @axel669/ipsen
+pnpm add @axel669/ipsen@{| $.file("package.json").version |}
 ```
 
 ## Usage
@@ -142,3 +142,40 @@ controls or other modifications.
 A json file that can have any number of variables available to templates as
 `$.vars`. Ipsen does not read the contents of this file for anything it does on
 its own, so it can have any format the template wants.
+
+### Extending Templates
+Templates can be extended by putting a file named `.extend` inside the root of
+the template folder. The file should contain the name of the template to be
+extended, and follows the same rules for the name as the config file. Ipsen will
+collect the list of files from each template and merge them into a single
+list where templates later in a chain have priority, effectively overriding
+any files if they share a name. An extending template can override any file
+provided by they extend, including ones like `page.html` and `code.html`.
+
+The `vars.json` file will also be loaded from all templates in a chain, with the
+later variables overriding the earlier ones.
+
+```js
+// Example: custom template extends @basic template
+
+// custom template files
+[
+  "page.html",
+  "new-thing.html"
+]
+// @basic template files
+[
+  "page.html",
+  "sidebar.html"
+]
+
+// resolved mapping
+{
+  // custom overrides the template before it
+  "page.html": "custom/page.html",
+  // no previous entry, file is just added as another entry
+  "new-thing": "custom/new-thing.html",
+  // no entry overriding the built-in file, added as another entry
+  "sidebar.html": "@basic/sidebar.html"
+}
+```
