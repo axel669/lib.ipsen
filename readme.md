@@ -8,7 +8,7 @@ A static site generator that aims to be simple and powerful.
 
 ## Installation
 ```bash
-pnpm add @axel669/ipsen@{| $.file("package.json").version |}
+pnpm add @axel669/ipsen@beta
 ```
 
 ## Usage
