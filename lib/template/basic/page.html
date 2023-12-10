@@ -20,8 +20,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.3/dist/browser.js"></script>
         <ws-paper ws-x="r[0px] w[min(100%, 800px)] m.l[auto] m.r[auto]">
             {|@ "part/sidebar.html" |}
-            {|^ if $.options.github !== undefined |}
-                {|@ "part/github.html" |}
+            {|^ if $.options.repo !== undefined |}
+                {|@ "part/repo.html" |}
             {||}
             <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper" slot="content">
                 <div>
