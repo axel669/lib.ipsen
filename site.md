@@ -1,2 +1,4 @@
 [Home](readme.md)
-- [Burger Templates](burger.md)
+- [Burger Templates](docs/burger.md)
+- Templates
+    - [Basic](docs/basic-template.md)

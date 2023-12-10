@@ -7,10 +7,10 @@ parsers:
   py: "@py"
   yaml: "@yaml"
   json: "@json"
-template: "@basic"
+template: "custom"
 options:
   theme: dark
-  github: https://github.com/axel669/lib.ipsen
+  repo: https://github.com/axel669/lib.ipsen
   favicon: https://axel669.net/images/megaman-rounded.png
   opengraph:
     title: Ipsen

@@ -8,7 +8,7 @@ A static site generator that aims to be simple and powerful.
 
 ## Installation
 ```bash
-pnpm add @axel669/ipsen@beta
+pnpm add @axel669/ipsen@0.4.0-beta.5
 ```
 
 ## Usage
@@ -34,9 +34,6 @@ That's really it. All the configuration and custom files are read from the
 The `config.yml` file is the only file required by ipsen. The other folders are
 optional, and only used when rendering from custom templates/parsers.
 
-If the data folder is present, the files will be loaded from it using the
-parsers configured in the config and loaded into `$.data[<filename>]` for the
-templates to use.
 ```
 project
     .ipsen
@@ -53,7 +50,7 @@ project
 ```
 
 ### config.yml
-```yml
+```yaml
 # The source markdown file that lists the contents of the site.
 source: site.md
 # The folder to save the generated files into.
