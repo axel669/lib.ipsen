@@ -1,43 +1,53 @@
 <div
 ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
-tf[translateX(max(-400px, -50vw))]">
+tf[translateX(max(-400px, -50vw))] p[2px] gap[2px] gr.rows[40px 40px]">
     <label
-    ws-x="$button $flat $compact $color[primary] r[0px]
-    bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] b.t.w[0px] r.b[4px]"
-    for="menu">
+    ws-x="$button $flat $compact $color[primary]
+    bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] r[4px]"
+    for="pagenav">
         <ws-icon class="ti-menu-2" ws-x="t.sz[20px]" />
+    </label>
+    <label
+    ws-x="$button $flat $compact $color[primary]
+    bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] r[4px]"
+    for="sitenav">
+        <ws-icon class="ti-sitemap" ws-x="t.sz[20px]" />
     </label>
 </div>
 
-<input type="checkbox" ws-x="hide" id="menu" />
+<input type="checkbox" ws-x="hide" id="pagenav" />
 <ws-modal>
-    <label for="menu"></label>
-    <ws-paper ws-x="$menu r[0px] w.min[20vw] w.max[320px]">
-        <ws-flex ws-x="over.y[auto] p.b[16px]">
-            <ws-titlebar ws-x="$color[primary]">
-                <ws-text ws-x="$title" slot="title">
-                    Page Navigation
-                </ws-text>
-            </ws-titlebar>
-            <ws-flex ws-x="p[0px]">
-                {|^ for $.headings -> heading |}
-                    <a href="#{| heading.id |}"
-                    ws-x="p[8px] p.l[{| heading.depth * 16 |}px] t.sz[&text-size-header]
-                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
-                    >
-                        {|* heading.html |}
-                    </a>
-                {||}
-            </ws-flex>
+    <label for="pagenav"></label>
+    <ws-paper ws-x="$select r[0px] h[65svh] w[calc(min(100%, 800px) - 80px)]">
+        <ws-titlebar ws-x="$color[primary] $fill" slot="header">
+            <ws-text ws-x="$title" slot="title">
+                Page Navigation
+            </ws-text>
+        </ws-titlebar>
+        <ws-flex ws-x="over[auto] p.b[16px]" slot="content">
+            {|^ for $.headings -> heading |}
+                <a href="{| $.destFile |}#{| heading.id |}"
+                ws-x="p[8px] p.l[{| heading.depth * 16 |}px] t.sz[&text-size-header]
+                t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                >
+                    {|* heading.html |}
+                </a>
+            {||}
+        </ws-flex>
+    </ws-paper>
+</ws-modal>
 
-            <ws-titlebar ws-x="$color[secondary]">
-                <ws-text ws-x="$title" slot="title">
-                    Site Navigation
-                </ws-text>
-            </ws-titlebar>
-            <ws-flex ws-x="t.sz[&text-size-header]">
-                {|@ "site-tree.html" # list: $.sidebar |}
-            </ws-flex>
+<input type="checkbox" ws-x="hide" id="sitenav" />
+<ws-modal>
+    <label for="sitenav"></label>
+    <ws-paper ws-x="$select r[0px] h[65svh] w[calc(min(100%, 800px) - 80px)]">
+        <ws-titlebar ws-x="$color[secondary] $fill" slot="header">
+            <ws-text ws-x="$title" slot="title">
+                Site Navigation
+            </ws-text>
+        </ws-titlebar>
+        <ws-flex ws-x="over[auto] p.b[16px] t.sz[&text-size-header]" slot="content">
+            {|@ "site-tree.html" # list: $.sidebar |}
         </ws-flex>
     </ws-paper>
 </ws-modal>
