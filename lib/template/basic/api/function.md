@@ -11,7 +11,7 @@ Function does not take any arguments
 
 {| "#".repeat($.depth + 1) |} Arguments
 
-<ws-flex ws-x="p[0px]">
+<ws-flex ws-x="[p 0px]">
 {|@ "function/args.md" # args: $.info.args |}
 </ws-flex>
 
