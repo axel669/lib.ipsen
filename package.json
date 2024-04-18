@@ -1,28 +1,29 @@
 {
   "name": "@axel669/ipsen",
-  "version": "0.3.1",
-  "description": "Library for generating documentation sites from markdown embedded in code comments",
+  "version": "0.4.0",
+  "description": "",
   "main": "lib/main.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "type": "module",
+  "scripts": {},
   "bin": {
-    "ipsen": "./lib/main.mjs"
+    "ipsen": "./lib/cli.mjs"
   },
   "keywords": [],
   "author": "Axel",
   "license": "MIT",
   "dependencies": {
-    "@axel669/array-sort": "^0.1.0",
-    "fast-glob": "^3.2.12",
     "fs-jetpack": "^5.1.0",
-    "marked": "^4.2.12",
-    "yaml": "^2.2.1"
+    "js-yaml": "^4.1.0",
+    "marked": "^9.0.2",
+    "prismjs": "^1.29.0",
+    "xml-beautifier": "^0.5.0",
+    "yaml-front-matter": "^4.1.1"
   },
   "files": [
-    "lib"
+    "lib/",
+    "example/"
   ],
-  "imports": {
-    "#config": "./lib/config.mjs"
+  "devDependencies": {
+    "prism-svelte": "^0.5.0"
   }
 }

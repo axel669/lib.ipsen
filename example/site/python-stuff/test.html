@@ -1,0 +1,288 @@
+<html>
+    <head>
+        <title>⚠ Test</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
+
+
+
+        <base href="../../" />
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@v1.29.0/themes/prism-twilight.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body ws-x="$theme[dark]">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.1/dist/browser.js"></script>
+        <ws-paper ws-x="r[0px] w[min(100%, 800px)] m.l[auto] m.r[auto]">
+            <div
+ws-x="pos[fixed] x[50%] y[0px] grid w[36px] h[40px]
+tf[translateX(max(-400px, -50vw))]">
+    <label
+    ws-x="$button $flat $compact $color[primary] r[0px]
+    bg[&background-layer] b.s[solid] b.c[&primary] b.w[2px] b.t.w[0px] r.b[4px]"
+    for="menu">
+        <ws-icon class="ti-menu-2" ws-x="t.sz[20px]" />
+    </label>
+</div>
+
+<input type="checkbox" ws-x="hide" id="menu" />
+<ws-modal>
+    <label for="menu"></label>
+    <ws-paper ws-x="$menu r[0px] w.min[20vw] w.max[320px]">
+        <ws-flex ws-x="over.y[auto] p.b[16px]">
+            <ws-titlebar ws-x="$color[primary]">
+                <ws-text ws-x="$title" slot="title">
+                    Page Navigation
+                </ws-text>
+            </ws-titlebar>
+            <ws-flex ws-x="p[0px]">
+                    <a href="#1-markdown-demo"
+                    ws-x="p[8px] p.l[16px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        Markdown Demo
+                    </a>
+                    <a href="#1.1-api"
+                    ws-x="p[8px] p.l[32px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        API
+                    </a>
+                    <a href="#1.1.1-x"
+                    ws-x="p[8px] p.l[48px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        x
+                    </a>
+                    <a href="#1.1.2-fetch"
+                    ws-x="p[8px] p.l[48px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        fetch
+                    </a>
+                    <a href="#1.1.2.1-arguments"
+                    ws-x="p[8px] p.l[64px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        Arguments
+                    </a>
+                    <a href="#2-another-top-level"
+                    ws-x="p[8px] p.l[16px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        Another Top Level
+                    </a>
+                    <a href="#2.1-with-more-sections"
+                    ws-x="p[8px] p.l[32px] t.sz[&text-size-header]
+                    t.dec[none] c:hover[&primary] b.r:hover[3px solid &primary]"
+                    >
+                        With more sections
+                    </a>
+            </ws-flex>
+
+            <ws-titlebar ws-x="$color[secondary]">
+                <ws-text ws-x="$title" slot="title">
+                    Site Navigation
+                </ws-text>
+            </ws-titlebar>
+            <ws-flex ws-x="t.sz[&text-size-header]">
+                
+    <div>
+            <a href=""
+            style="display: block;"
+            ws-x="t.dec[none] c:hover[&secondary]
+            b.r:hover[3px solid &secondary]">
+                
+    <ws-icon class="ti-file-text"></ws-icon>
+
+
+                Home
+            </a>
+        
+    </div>
+    <div>
+            <div>
+                
+    <ws-icon class="ti-folder"></ws-icon>
+
+                Python Stuff
+            </div>
+            <ws-flex ws-x="p.l[12px]">
+                
+    <div>
+            <a href="./python-stuff/test.html"
+            style="display: block;"
+            ws-x="t.dec[none] c:hover[&secondary]
+            b.r:hover[3px solid &secondary]">
+                
+    <ws-icon class="ti-file-text"></ws-icon>
+
+
+                ⚠ Test
+            </a>
+        
+    </div>
+
+            </ws-flex>
+    </div>
+
+            </ws-flex>
+        </ws-flex>
+    </ws-paper>
+</ws-modal>
+
+            <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper">
+                <div>
+                    <h1 id="1-markdown-demo">
+                <a href="#1-markdown-demo">Markdown Demo</a>
+            </h1>
+<p>This is a markdown file!</p>
+<h2 id="1.1-api">
+                <a href="#1.1-api">API</a>
+            </h2>
+<p>API docs for the python thing or something?</p>
+<h3 id="1.1.1-x">
+                <a href="#1.1.1-x">x</a>
+            </h3>
+<p><strong>number</strong></p>
+<p>this is some content</p>
+<h3 id="1.1.2-fetch">
+                <a href="#1.1.2-fetch">fetch</a>
+            </h3>
+<p><strong>function</strong>
+<em>async</em></p>
+<p>Loads some network resources or something idk. <strong>testing</strong> <em>stuff</em></p>
+<h4 id="1.1.2.1-arguments">
+                <a href="#1.1.2.1-arguments">Arguments</a>
+            </h4>
+<ws-flex ws-x="p[0px]">
+
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>url</strong>
+        </div>
+        <div>
+        string
+        </div>
+        <div><p>URL to request</p>
+</div>
+        
+</ws-flex>
+</ws-paper>
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>options</strong>
+        </div>
+        <div><p>Options for the thing?</p>
+</div>
+        
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>headers</strong>
+        </div>
+        <div>
+        object
+        </div>
+        <div><p>Object with key-value pairs of headers + values</p>
+</div>
+        
+</ws-flex>
+</ws-paper>
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>method</strong>
+        </div>
+        <div>
+        string
+        </div>
+        <div><p>Method for the request Can be <code>&quot;GET&quot;</code> or stuff</p>
+</div>
+        
+</ws-flex>
+</ws-paper>
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>nested</strong>
+        </div>
+        <div><p>extra stuff</p>
+</div>
+        
+<ws-paper ws-x="$outline b.w[2px] m.l[16px]">
+    <ws-flex>
+        <div>
+            <strong>thing</strong>
+        </div>
+        <div>
+        number
+        </div>
+        <div><p>number of extra things?</p>
+</div>
+        
+</ws-flex>
+</ws-paper>
+</ws-flex>
+</ws-paper>
+</ws-flex>
+</ws-paper>
+
+</ws-flex>
+
+
+
+
+
+<blockquote>
+<p>Some block quote text to be even cooler</p>
+</blockquote>
+<p>Check it out, a mermaid diagram \o/</p>
+<code-area ws-x="pos[relative]">
+    <script>
+        function test7() {
+            navigator.clipboard.writeText(
+                "flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[iPhone]\n    C -->|Three| F[fa:fa-car Car]"
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="$fill $color[primary] $compact p.y[2px]"
+        onclick="test7()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-mermaid"><code class="language-mermaid"><span class="token keyword">flowchart</span> TD
+    A<span class="token text string">[Christmas]</span> <span class="token arrow operator">--></span><span class="token label property">|Get money|</span> B<span class="token text string">(Go shopping)</span>
+    B <span class="token arrow operator">--></span> C<span class="token text string">{Let me think}</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|One|</span> D<span class="token text string">[Laptop]</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|Two|</span> E<span class="token text string">[iPhone]</span>
+    C <span class="token arrow operator">--></span><span class="token label property">|Three|</span> F<span class="token text string">[fa:fa-car Car]</span></code></pre>
+</code-area>
+<pre class="mermaid">flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]</pre><h1 id="2-another-top-level">
+                <a href="#2-another-top-level">Another Top Level</a>
+            </h1>
+<h2 id="2.1-with-more-sections">
+                <a href="#2.1-with-more-sections">With more sections</a>
+            </h2>
+<p>Like Odat does to screw things up</p>
+
+                </div>
+            </ws-flex>
+        </ws-paper>
+        <script type="module">
+            import mermaid
+            from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+
+            mermaid.run({
+                querySelector: ".mermaid"
+            })
+        </script>
+    </body>
+</html>
