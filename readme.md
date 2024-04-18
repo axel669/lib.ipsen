@@ -1,4 +1,4 @@
-# Ipsen (Beta)
+# Ipsen
 
 A static site generator that aims to be simple and powerful.
 
