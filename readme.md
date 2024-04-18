@@ -8,7 +8,7 @@ A static site generator that aims to be simple and powerful.
 
 ## Installation
 ```bash
-pnpm add @axel669/ipsen@0.4.0
+pnpm add @axel669/ipsen@0.4.1
 ```
 
 ## Usage
